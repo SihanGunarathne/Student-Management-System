@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react'
-import { Card, CardTitle } from 'reactstrap'
+import { Card, CardBody, CardTitle } from 'reactstrap'
 import axios from 'axios'
 import Student from './Student'
 import base_url from '../URLS/Url'
 import {toast} from 'react-toastify'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { render } from '@testing-library/react'
+import { ListGroup, Row, Col} from 'reactstrap'
 
 
 export default function AllStudents() {
-//const AllStudents = ()=>{
 
     const [students, setStudents]=useState([])
 
@@ -26,11 +26,7 @@ export default function AllStudents() {
         axios.get(`${base_url}/all`).then(
             (response)=>{
                 setStudents(response.data)
-               // toast.info("!! All Students loaded from Server !!",{position:"top-center"})
-            },
-            (error)=>{
-                toast.error("!! Something went wrong on Server. We are looking at it. !!")
-
+               
             }
 
         )
@@ -38,10 +34,35 @@ export default function AllStudents() {
     }
     
     return (
-        <Card body inverse color="info">
+        <Card body inverse style={{ backgroundColor: '#845', borderColor: '#033' }}>
             <CardTitle className="display-3">
                 All Students
             </CardTitle>
+
+            <CardBody body inverse style={{ backgroundColor: '#333', borderColor: '#333' }}>
+                <ListGroup>
+                    <Row>
+                        <Col>
+                            First Name   
+                        </Col>
+                        <Col>
+                            Last Name
+                        </Col>
+                        <Col>
+                            Age
+                        </Col>
+                        <Col>
+                            Address
+                        </Col>
+                        <Col>
+                            Year
+                        </Col>
+                        <Col>
+                            Edit/Delete
+                        </Col>
+                    </Row>
+                </ListGroup>
+            </CardBody>
             {
                 students.length>0?
                     students.map((student)=>(
@@ -55,4 +76,3 @@ export default function AllStudents() {
     )
 }
 
-//export default AllStudents

@@ -19,33 +19,28 @@ export default class App extends Component {
   render(){
     return (
       <div className="App">
-        <Card body inverse style={{ backgroundColor: '#333', borderColor: '#333' }}>
+        <Card body inverse style={{ backgroundColor: '#271', borderColor: '#333' }}>
         <ToastContainer position="top-center"/>
         <CardTitle className="display-2">
           STUDENT MANAGEMENT SYSTEM
         </CardTitle>
         <Router>
-            <Container>
+            
             <Row>
                 <Col>
                     <Menu/>
                 </Col>
               </Row>
 
-              <Row>
-                <Col>
-                <FetchStudents />
-                <AddStudent />
                 
                     <Routes>
-                      <Route exact path="/" component={FetchStudents} />
-                      <Route exact path="/add" component={AddStudent} />
-                      <Route exact path="/update" component={UpdateStudent} />
+                      <Route exact path='/' element={<FetchStudents/>} />
+                      <Route exact path='/add' element={<AddStudent/>} />
+                      <Route exact path='/update' element={<UpdateStudent/>} />
                     </Routes>
                     
-                </Col>
-              </Row>
-            </Container>
+
+            
         </Router>
         </Card>
         

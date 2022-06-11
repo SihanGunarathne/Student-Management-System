@@ -4,29 +4,61 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 import base_url from '../URLS/Url'
 import { toast } from 'react-toastify'
+import { ListGroup, Row, Col} from 'reactstrap'
+
 const Student = ({student, update})=>{
     const deletstudent =(studentId)=>{
         axios.delete(`${base_url}/delete/${studentId}`).then(
             (response)=>{
                 toast.info("!! Student "+studentId+" Deleted Successfuly !!")
                 update(studentId)
-            },
-            (error)=>{
-                toast.error("!! Something went wrong on Server. We are looking at it. !!")
             }
 
         )
     }
 
-
+    
     return (
-        <Card body inverse color="info">
+        <Card body inverse style={{ backgroundColor: '#046', borderColor: '#033',color:"black"  }}>
+
             <CardBody>
-                <CardTitle className="font-weight-bold">
-                    {student.title}
-                </CardTitle>
-                <CardText>{student.content}</CardText>
-                <Container>
+                <ListGroup>
+                    <Row>
+                        <Col>
+                            {student.firstName}   
+                        </Col>
+                        <Col>
+                            {student.lastName}
+                        </Col>
+                        <Col>
+                            {student.age}
+                        </Col>
+                        <Col>
+                            {student.address}
+                        </Col>
+                        <Col>
+                            {student.year}
+                        </Col>
+                        <Col>
+                        <Container>
+                            <Link className="btn btn-primary" to={{pathname:"/update", param:student.studentId}} 
+                            style={{marginRight:15+"px"}}>
+                                Edit
+                            </Link>
+                        
+                            
+                            <Button color="danger" onClick={()=>{
+                                deletstudent(student.studentId)
+                            }} > 
+                                Delete
+                            </Button>
+                        </Container>
+                        </Col>
+                    </Row>
+                </ListGroup>
+  
+                
+                {/* <Container>
                     <Link className="btn btn-primary" to={{pathname:"/update", param:student.studentId}} 
                     style={{marginRight:15+"px"}}>
                         Edit
@@ -37,7 +69,7 @@ const Student = ({student, update})=>{
                     }} > 
                         Delete
                     </Button>
-                </Container>
+                </Container> */}
             </CardBody>
 
         </Card>

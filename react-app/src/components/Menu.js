@@ -6,16 +6,13 @@ const Menu = ()=>{
         <ListGroup>
             <Row>
                 <Col>
-                    <Link className="list-group-item" to="/" 
-                    style={{backgroundColor:"gray", color:"white", 
-                        }}>
-                        Home
+                    <Link className="list-group-item" to='/' style={{backgroundColor:"gray", color:"white" }}>
+                        All Students
                     </Link>
                 </Col>
                 <Col>
-                    <Link className="list-group-item" to="/add" 
-                    style={{backgroundColor:"gray", color:"white"}}>
-                        Add Student
+                    <Link className="list-group-item" to='/add' style={{backgroundColor:"gray", color:"white"}}>
+                        Add New Student
                     </Link>
                 </Col>
             </Row>

@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import {Card,CardBody,CardTitle,Input,Container,Button} from 'reactstrap'
 import base_url from '../URLS/Url'
 import {toast} from 'react-toastify'
+import { useParams } from "react-router-dom";
 
 const UpdateStudent = (props)=>{
 
@@ -75,7 +76,7 @@ const UpdateStudent = (props)=>{
                     <br/>
                     <Container>
                         <Button type="submit" color="success" style={{marginRight:15+"px"}}>
-                            Post Student
+                            Submit Student
                         </Button>
                         <Button type="reset" color="warning" onClick={getStudentFromServerById}>
                             Clear

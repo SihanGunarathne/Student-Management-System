@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { toast } from 'react-toastify'
 import {Card,CardBody,CardTitle,Input,Container,Button} from 'reactstrap'
 import base_url from '../URLS/Url'
+import { Redirect } from 'react-router';
 
 const AddStudent = ()=>{
 
@@ -20,6 +21,11 @@ const AddStudent = ()=>{
             }
         )
     }
+
+
+ 
+
+        
 
     return(
         <Card body inverse style={{ backgroundColor: '#845', borderColor: '#033' }}>

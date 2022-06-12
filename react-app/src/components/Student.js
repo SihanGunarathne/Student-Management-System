@@ -41,10 +41,10 @@ const Student = ({student, update})=>{
                         </Col>
                         <Col>
                         <Container>
-                            <Link className="btn btn-primary" to={{pathname:"/update", param:student.studentId}} 
+                            {/* <Link className="btn btn-primary" to={{pathname:"/update", param:student.studentId}} 
                             style={{marginRight:15+"px"}}>
                                 Edit
-                            </Link>
+                            </Link> */}
                         
                             
                             <Button color="danger" onClick={()=>{

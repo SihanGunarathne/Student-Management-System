@@ -36,7 +36,7 @@ export default class App extends Component {
                     <Routes>
                       <Route exact path='/' element={<FetchStudents/>} />
                       <Route exact path='/add' element={<AddStudent/>} />
-                      <Route exact path='/update' element={<UpdateStudent/>} />
+                      <Route exact path='/update/:id' element={<UpdateStudent/>} />
                     </Routes>
                     
 

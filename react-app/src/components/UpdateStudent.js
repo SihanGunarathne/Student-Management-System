@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import {Card,CardBody,CardTitle,Input,Container,Button} from 'reactstrap'
 import base_url from '../URLS/Url'
 import {toast} from 'react-toastify'
-import { useParams } from "react-router-dom";
+
 
 const UpdateStudent = (props)=>{
 
@@ -14,7 +14,7 @@ const UpdateStudent = (props)=>{
             (response)=>{
                 setStudent(response.data)
             },(error)=>{
-                toast.error("!! Something went wrong on Server. We are looking at it. !!")
+                toast.error("!! Something went wrong on Server.!!")
             }
         )
     }
@@ -36,7 +36,7 @@ const UpdateStudent = (props)=>{
             (response)=>{
                 toast.info("!! Student Updated Successfully")
             },(error)=>{
-                toast.error("!! Something went wrong on Server. We are looking at it. !!")
+                toast.error("!! Something went wrong on Server.!!")
             }
         )
     }

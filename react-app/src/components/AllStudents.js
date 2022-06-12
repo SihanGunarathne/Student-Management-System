@@ -58,7 +58,7 @@ export default function AllStudents() {
                             Year
                         </Col>
                         <Col>
-                            Edit/Delete
+                            Delete
                         </Col>
                     </Row>
                 </ListGroup>
